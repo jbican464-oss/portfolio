@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="NeuroFisk: app que estima el riesgo de una posible crisis epiléptica a partir de señales en vivo y te recomienda cómo actuar."
+    />
+    <meta name="theme-color" content="#f2f2f7" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("nr-tema");
+          var oscuro =
+            t === "oscuro" ||
+            ((!t || t === "sistema") &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          var resuelto = oscuro ? "oscuro" : "claro";
+          var raiz = document.documentElement;
+          raiz.dataset.theme = resuelto;
+          raiz.style.colorScheme = oscuro ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", oscuro ? "#000000" : "#f2f2f7");
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="NeuroFisk" />
+    <link rel="apple-touch-icon" href="./icono-apple-180.png" />
+    <title>NeuroFisk — Monitoreo de crisis epilépticas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script type="module" crossorigin src="./assets/index-CKJlkEEa.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DP1WGC_u.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js" defer></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

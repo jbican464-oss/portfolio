@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio</title>
+  <meta name="description" content="Portafolio y CV" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas class="particles" aria-hidden="true"
+          data-quantity="380" data-color="#ecebe6" data-size="3"
+          data-opacity="0.45" data-drift="0.3" data-depth="0.7"></canvas>
+  <header class="nav">
+    <a href="#inicio" class="brand" id="brand"></a>
+    <button class="menu-btn" aria-label="Menú" aria-expanded="false">Menú</button>
+    <nav class="links">
+      <a href="#trabajo">Trabajo</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+      <button class="link-btn" id="btn-cv">CV ↓</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow reveal" id="eyebrow"></p>
+        <h1 class="reveal" id="nombre"></h1>
+        <p class="lead reveal" id="lead"></p>
+        <p class="status reveal" id="status"><i></i> Disponible para prácticas y proyectos</p>
+        <div class="hero-links reveal" id="hero-links"></div>
+      </div>
+      <figure class="hero-photo reveal">
+        <img id="hero-photo" alt="" />
+      </figure>
+    </section>
+
+    <!-- STACK (Marquee de Magic UI, versión sin React) -->
+    <section class="stack-band" aria-label="Tecnologías con las que trabajo">
+      <p class="band-label">Tecnologías con las que trabajo</p>
+      <div class="marquee" id="mq-1" data-pause></div>
+      <div class="marquee" id="mq-2" data-pause data-reverse></div>
+    </section>
+
+    <!-- TRABAJO -->
+    <section id="trabajo" class="block">
+      <div class="label reveal">Proyecto principal</div>
+      <div class="content">
+        <div class="case">
+          <div class="case-text reveal">
+            <h2 class="case-name" id="sc-name"></h2>
+            <p class="case-slogan" id="sc-slogan"></p>
+            <p class="case-desc" id="sc-desc"></p>
+            <ul class="facts" id="sc-cifras"></ul>
+            <p class="stack-line"><span>Hecho con</span> <span id="sc-stack"></span></p>
+            <div class="case-links">
+              <a class="arrow-link" id="sc-demo" target="_blank" rel="noopener">Abrir la app</a>
+              <a class="arrow-link" id="sc-code" target="_blank" rel="noopener">Código en GitHub</a>
+            </div>
+          </div>
+          <div class="phone-wrap reveal">
+            <div class="phone"><iframe id="sc-frame" title="Demo en vivo" loading="lazy"></iframe></div>
+            <p class="caption">La app real. Puedes usarla aquí.</p>
+          </div>
+        </div>
+
+        <ol class="features" id="sc-feats"></ol>
+
+        <div class="case-bottom">
+          <div class="reveal">
+            <h3 class="h3">El modelo de riesgo</h3>
+            <pre class="formula" id="sc-formula"></pre>
+          </div>
+          <div class="reveal">
+            <h3 class="h3">Dónde está ahora</h3>
+            <ul class="estado" id="sc-estado"></ul>
+          </div>
+        </div>
+        <p class="note" id="sc-aviso"></p>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="block">
+      <div class="label reveal">Sobre mí</div>
+      <div class="content">
+        <p class="about reveal" id="resumen"></p>
+        <div class="grid-3 reveal">
+          <div>
+            <h3 class="h3">Lenguajes</h3>
+            <ul class="plain" id="langs"></ul>
+          </div>
+          <div>
+            <h3 class="h3">Herramientas</h3>
+            <ul class="plain cols" id="tools"></ul>
+          </div>
+          <div>
+            <h3 class="h3">Idiomas</h3>
+            <ul class="plain" id="idiomas"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="label reveal">Formación</div>
+      <div class="content">
+        <ul class="timeline" id="estudios-list"></ul>
+        <div id="exp-wrap">
+          <h3 class="h3">Experiencia</h3>
+          <ul class="timeline" id="exp-list"></ul>
+        </div>
+        <div id="certs-wrap">
+          <h3 class="h3">Certificaciones</h3>
+          <ul class="timeline" id="certs"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact reveal">
+      <p class="eyebrow">Contacto</p>
+      <h2 class="big">¿Hablamos?</h2>
+      <p class="contact-sub">Busco prácticas, proyectos y gente con ganas de construir cosas útiles.</p>
+      <a class="mail" id="mail"></a>
+      <button class="link-btn small" id="copy-btn">Copiar email</button>
+      <a class="gh-card" id="gh-card" target="_blank" rel="noopener">
+        <i class="gh-icon"></i>
+        <span><b>GitHub</b><small id="gh-user"></small></span>
+        <em>Ver perfil →</em>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="foot"></span>
+    <span class="foot-links"><a id="foot-mail"></a><a id="foot-gh" target="_blank" rel="noopener">GitHub</a><a href="#inicio">Volver arriba ↑</a></span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="particles.js"></script>
+</body>
+</html>
